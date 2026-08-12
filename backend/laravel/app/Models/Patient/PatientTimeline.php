@@ -14,6 +14,8 @@ class PatientTimeline extends Model
 {
     use HasFactory, BelongsToCompany;
 
+    protected $table = 'patient_timeline';
+
     const UPDATED_AT = null;
 
     protected $fillable = [

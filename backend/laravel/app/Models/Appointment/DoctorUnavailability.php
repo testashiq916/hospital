@@ -14,6 +14,8 @@ class DoctorUnavailability extends Model
 {
     use HasFactory, BelongsToCompany;
 
+    protected $table = 'doctor_unavailability';
+
     protected $fillable = [
         'company_id', 'hospital_id', 'doctor_id', 'start_date', 'end_date',
         'start_time', 'end_time', 'reason', 'is_full_day',

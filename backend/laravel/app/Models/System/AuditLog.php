@@ -32,13 +32,24 @@ class AuditLog extends Model
         return $this->belongsTo(User::class);
     }
 
-    public static function record(string $action, ?Model $auditable = null, array $old = [], array $new = []): self
+    /**
+     * @param  Model|null  $auditable  The record being audited.
+     * @param  User|null  $actor  Defaults to the authenticated user. Pass
+     *                            explicitly for flows (login/register) where
+     *                            the acting user isn't yet resolved by the
+     *                            auth guard on the current request.
+     */
+    public static function record(string $action, ?Model $auditable = null, array $old = [], array $new = [], ?User $actor = null): ?self
     {
-        $user = auth()->user();
+        $user = $actor ?? auth()->user();
+
+        if (! $user) {
+            return null;
+        }
 
         return static::create([
-            'company_id' => $user?->company_id,
-            'user_id' => $user?->id,
+            'company_id' => $user->company_id,
+            'user_id' => $user->id,
             'action' => $action,
             'auditable_type' => $auditable ? get_class($auditable) : null,
             'auditable_id' => $auditable?->getKey(),

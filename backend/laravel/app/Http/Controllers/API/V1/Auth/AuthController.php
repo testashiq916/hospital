@@ -42,7 +42,7 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        AuditLog::record('register', $user, [], ['email' => $user->email]);
+        AuditLog::record('register', $user, [], ['email' => $user->email], $user);
 
         return response()->json([
             'message' => 'Registration successful.',
@@ -88,7 +88,7 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        AuditLog::record('login', $user);
+        AuditLog::record('login', $user, [], [], $user);
 
         return response()->json([
             'message' => 'Login successful.',
@@ -99,9 +99,14 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-        $request->user()->currentAccessToken()->delete();
+        $user = $request->user();
 
-        AuditLog::record('logout', $request->user());
+        // Capture the actor before revoking the token: once the current
+        // access token row is deleted, the sanctum guard can no longer
+        // re-resolve the user from it.
+        AuditLog::record('logout', null, [], [], $user);
+
+        $user->currentAccessToken()->delete();
 
         return response()->json(['message' => 'Logged out successfully.']);
     }

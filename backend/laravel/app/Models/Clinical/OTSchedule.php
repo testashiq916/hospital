@@ -15,6 +15,8 @@ class OTSchedule extends Model
 {
     use HasFactory, BelongsToCompany;
 
+    protected $table = 'ot_schedules';
+
     protected $fillable = [
         'company_id', 'hospital_id', 'patient_id', 'doctor_id', 'assistant_doctor_id',
         'anesthetist_id', 'nurse_id', 'ot_id', 'ot_number', 'surgery_date',
