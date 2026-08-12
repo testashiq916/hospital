@@ -12,7 +12,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->api(prepend: [
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+        ]);
+
+        $middleware->alias([
+            'permission' => \App\Http\Middleware\RolePermission::class,
+            'company.active' => \App\Http\Middleware\EnsureCompanyActive::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
