@@ -1,0 +1,235 @@
+hospital-management-system/
+│
+├── backend/
+│   └── laravel/
+│       ├── app/
+│       │   ├── Console/
+│       │   │   ├── Commands/
+│       │   │   │   ├── Clinical/
+│       │   │   │   │   ├── ProcessDailyAdmissions.php
+│       │   │   │   │   ├── GeneratePatientReports.php
+│       │   │   │   │   └── SendFollowUpReminders.php
+│       │   │   │   ├── Lab/
+│       │   │   │   │   ├── ProcessLabOrders.php
+│       │   │   │   │   └── AutoReportDelivery.php
+│       │   │   │   ├── Finance/
+│       │   │   │   │   ├── CloseMonthlyBooks.php
+│       │   │   │   │   ├── GenerateTrialBalance.php
+│       │   │   │   │   └── ProcessInsuranceClaims.php
+│       │   │   │   ├── AI/
+│       │   │   │   │   ├── AnalyzeLabReports.php
+│       │   │   │   │   └── UpdateHealthRiskScores.php
+│       │   │   │   └── System/
+│       │   │   │       ├── BackupDatabase.php
+│       │   │   │       └── CheckSystemHealth.php
+│       │   │   └── Kernel.php
+│       │   │
+│       │   ├── Events/
+│       │   │   ├── Patient/
+│       │   │   │   ├── PatientRegistered.php
+│       │   │   │   ├── PatientAdmitted.php
+│       │   │   │   └── PatientDischarged.php
+│       │   │   ├── Appointment/
+│       │   │   │   ├── AppointmentBooked.php
+│       │   │   │   └── AppointmentCompleted.php
+│       │   │   ├── Lab/
+│       │   │   │   ├── LabOrderCreated.php
+│       │   │   │   └── LabReportGenerated.php
+│       │   │   └── Billing/
+│       │   │       ├── InvoiceGenerated.php
+│       │   │       └── PaymentReceived.php
+│       │   │
+│       │   ├── Exceptions/
+│       │   │   ├── Patient/
+│       │   │   ├── Billing/
+│       │   │   └── Handler.php
+│       │   │
+│       │   ├── Http/
+│       │   │   ├── Controllers/
+│       │   │   │   ├── API/
+│       │   │   │   │   └── V1/
+│       │   │   │   │       ├── Auth/
+│       │   │   │   │       ├── Hospital/
+│       │   │   │   │       ├── Patient/
+│       │   │   │   │       ├── Doctor/
+│       │   │   │   │       ├── Clinical/
+│       │   │   │   │       ├── Lab/
+│       │   │   │   │       ├── Pharmacy/
+│       │   │   │   │       ├── Billing/
+│       │   │   │   │       ├── Accounting/
+│       │   │   │   │       ├── AI/
+│       │   │   │   │       └── Reports/
+│       │   │   │   ├── Admin/
+│       │   │   │   ├── Doctor/
+│       │   │   │   └── Web/
+│       │   │   │
+│       │   │   ├── Middleware/
+│       │   │   │   ├── Authenticate.php
+│       │   │   │   ├── CompanyScope.php
+│       │   │   │   ├── SubscriptionCheck.php
+│       │   │   │   ├── RolePermission.php
+│       │   │   │   └── CORS.php
+│       │   │   │
+│       │   │   ├── Requests/
+│       │   │   │   ├── API/
+│       │   │   │   │   └── V1/
+│       │   │   │   │       ├── Patient/
+│       │   │   │   │       ├── Appointment/
+│       │   │   │   │       ├── Lab/
+│       │   │   │   │       └── Billing/
+│       │   │   │   └── Admin/
+│       │   │   │
+│       │   │   └── Resources/
+│       │   │       └── API/
+│       │   │           └── V1/
+│       │   │               ├── Patient/
+│       │   │               ├── Doctor/
+│       │   │               ├── Clinical/
+│       │   │               └── Lab/
+│       │   │
+│       │   ├── Jobs/
+│       │   │   ├── Patient/
+│       │   │   │   ├── ProcessPatientRegistration.php
+│       │   │   │   └── SendPatientNotifications.php
+│       │   │   ├── Lab/
+│       │   │   │   ├── ProcessLabReport.php
+│       │   │   │   └── SendLabReports.php
+│       │   │   ├── Billing/
+│       │   │   │   ├── GenerateInvoicePDF.php
+│       │   │   │   └── ProcessInsuranceClaim.php
+│       │   │   ├── Notification/
+│       │   │   │   ├── SendEmailNotification.php
+│       │   │   │   ├── SendSMSNotification.php
+│       │   │   │   ├── SendPushNotification.php
+│       │   │   │   └── SendWhatsAppNotification.php
+│       │   │   └── System/
+│       │   │       ├── GenerateDailyReports.php
+│       │   │       └── ProcessAIAnalysis.php
+│       │   │
+│       │   ├── Mail/
+│       │   │   ├── Patient/
+│       │   │   │   ├── RegistrationConfirmation.php
+│       │   │   │   ├── AppointmentReminder.php
+│       │   │   │   └── DischargeSummary.php
+│       │   │   ├── Lab/
+│       │   │   │   ├── LabReportMail.php
+│       │   │   │   └── ReportDelivery.php
+│       │   │   └── Billing/
+│       │   │       ├── InvoiceMail.php
+│       │   │       └── PaymentReceipt.php
+│       │   │
+│       │   ├── Models/
+│       │   │   ├── System/
+│       │   │   │   ├── Company.php
+│       │   │   │   ├── User.php
+│       │   │   │   ├── Role.php
+│       │   │   │   ├── Permission.php
+│       │   │   │   └── Plan.php
+│       │   │   ├── Hospital/
+│       │   │   │   ├── Hospital.php
+│       │   │   │   ├── Department.php
+│       │   │   │   ├── Ward.php
+│       │   │   │   └── Bed.php
+│       │   │   ├── Patient/
+│       │   │   │   ├── Patient.php
+│       │   │   │   ├── PatientFamily.php
+│       │   │   │   ├── PatientDocument.php
+│       │   │   │   ├── PatientVisit.php
+│       │   │   │   ├── PatientAdmission.php
+│       │   │   │   ├── CaseSheet.php
+│       │   │   │   └── PatientTimeline.php
+│       │   │   ├── Clinical/
+│       │   │   │   ├── OPDRecord.php
+│       │   │   │   ├── IPDRecord.php
+│       │   │   │   ├── NursingRecord.php
+│       │   │   │   ├── ICURecord.php
+│       │   │   │   └── OTSchedule.php
+│       │   │   ├── Appointment/
+│       │   │   │   ├── DoctorSchedule.php
+│       │   │   │   ├── DoctorUnavailability.php
+│       │   │   │   ├── Appointment.php
+│       │   │   │   └── QueueToken.php
+│       │   │   ├── Lab/
+│       │   │   │   ├── LabTest.php
+│       │   │   │   ├── LabTestParameter.php
+│       │   │   │   ├── LabOrder.php
+│       │   │   │   ├── LabOrderItem.php
+│       │   │   │   ├── LabReport.php
+│       │   │   │   ├── RadiologyTest.php
+│       │   │   │   ├── RadiologyOrder.php
+│       │   │   │   └── BloodBank.php
+│       │   │   ├── Pharmacy/
+│       │   │   │   ├── MedicineCategory.php
+│       │   │   │   ├── Medicine.php
+│       │   │   │   ├── Prescription.php
+│       │   │   │   ├── PrescriptionItem.php
+│       │   │   │   ├── PharmacyInventory.php
+│       │   │   │   ├── PharmacyDispensing.php
+│       │   │   │   └── PharmacyDispensingItem.php
+│       │   │   ├── Billing/
+│       │   │   │   ├── HospitalBill.php
+│       │   │   │   ├── BillItem.php
+│       │   │   │   ├── InsuranceClaim.php
+│       │   │   │   └── HospitalPayment.php
+│       │   │   ├── Accounting/
+│       │   │   │   ├── ChartOfAccount.php
+│       │   │   │   ├── Daybook.php
+│       │   │   │   ├── Voucher.php
+│       │   │   │   └── VoucherDetail.php
+│       │   │   └── AI/
+│       │   │       ├── AIAnalysis.php
+│       │   │       ├── AIPrediction.php
+│       │   │       └── AIChatHistory.php
+│       │   │
+│       │   ├── Observers/
+│       │   ├── Policies/
+│       │   ├── Providers/
+│       │   ├── Repositories/
+│       │   ├── Services/
+│       │   │   ├── Hospital/
+│       │   │   ├── Patient/
+│       │   │   ├── Clinical/
+│       │   │   ├── Appointment/
+│       │   │   ├── Lab/
+│       │   │   ├── Pharmacy/
+│       │   │   ├── Billing/
+│       │   │   ├── Accounting/
+│       │   │   ├── AI/
+│       │   │   └── Notification/
+│       │   ├── Helpers/
+│       │   └── Traits/
+│       ├── bootstrap/
+│       ├── config/
+│       ├── database/
+│       │   ├── migrations/
+│       │   ├── seeders/
+│       │   └── factories/
+│       ├── public/
+│       ├── resources/
+│       │   └── views/
+│       │       ├── admin/
+│       │       ├── doctor/
+│       │       ├── patient/
+│       │       └── web/
+│       ├── routes/
+│       │   ├── api.php
+│       │   ├── web.php
+│       │   ├── admin.php
+│       │   ├── doctor.php
+│       │   └── patient.php
+│       ├── tests/
+│       ├── .env
+│       └── composer.json
+│
+├── frontend/
+│   ├── web-admin/
+│   ├── patient-portal/
+│   └── mobile-app/
+│       └── flutter/
+│           ├── lib/
+│           ├── assets/
+│           └── pubspec.yaml
+│
+├── docker/
+├── scripts/
+└── docs/

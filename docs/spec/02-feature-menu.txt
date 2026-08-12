@@ -1,0 +1,215 @@
+HOSPITAL MANAGEMENT SYSTEM (HMS)
+│
+├── 📊 DASHBOARD
+│   ├── Today's Summary
+│   │   ├── Total Patients
+│   │   ├── Appointments
+│   │   ├── Admissions
+│   │   ├── Revenue
+│   │   └── Occupancy Rate
+│   ├── Analytics
+│   │   ├── Patient Flow
+│   │   ├── Revenue Trend
+│   │   ├── Department Performance
+│   │   └── Doctor Performance
+│   └── Quick Actions
+│       ├── Register Patient
+│       ├── Book Appointment
+│       ├── Admit Patient
+│       └── Generate Bill
+│
+├── 🏥 HOSPITAL MANAGEMENT
+│   ├── Hospitals
+│   │   ├── Add/Edit/Delete
+│   │   ├── Branch Settings
+│   │   └── Facilities
+│   ├── Departments
+│   │   ├── Add/Edit/Delete
+│   │   └── Department Doctors
+│   ├── Wards
+│   │   ├── Add/Edit/Delete
+│   │   └── Ward Layout
+│   └── Beds
+│       ├── Add/Edit/Delete
+│       ├── Bed Assignment
+│       └── Bed Status
+│
+├── 👤 PATIENT MANAGEMENT
+│   ├── Patient Registration
+│   │   ├── OPD Registration
+│   │   ├── IPD Admission
+│   │   ├── Emergency Registration
+│   │   └── Patient Search
+│   ├── Patient Records
+│   │   ├── Patient Profile
+│   │   ├── Medical History
+│   │   ├── Family Details
+│   │   ├── Health Timeline
+│   │   └── Documents
+│   ├── Digital Records
+│   │   ├── EMR Management
+│   │   ├── Scan Documents
+│   │   └── Record Sharing
+│   └── Patient Portal
+│       ├── Online Registration
+│       ├── Profile Management
+│       └── Health Records
+│
+├── 👨‍⚕️ DOCTOR & APPOINTMENT
+│   ├── Doctor Management
+│   │   ├── Add/Edit/Delete
+│   │   ├── Doctor Schedules
+│   │   ├── Unavailability
+│   │   └── Performance Reports
+│   ├── Appointments
+│   │   ├── Book Appointment
+│   │   ├── Appointment List
+│   │   ├── Queue Management
+│   │   ├── Token System
+│   │   └── Teleconsultation
+│   ├── Doctor Dashboard
+│   │   ├── Today's Patients
+│   │   ├── Patient Queue
+│   │   └── Case Sheets
+│   └── Follow-up
+│       ├── Reminders
+│       └── Tracking
+│
+├── 🏥 CLINICAL MANAGEMENT
+│   ├── OPD Management
+│   │   ├── OPD Registration
+│   │   ├── OPD Consultation
+│   │   ├── OPD Records
+│   │   └── OPD Reports
+│   ├── IPD Management
+│   │   ├── Admission
+│   │   ├── Daily Records
+│   │   ├── Discharge
+│   │   └── Transfer
+│   ├── Nursing Management
+│   │   ├── Shift Assignment
+│   │   ├── Nursing Records
+│   │   ├── Vitals Tracking
+│   │   └── Care Plans
+│   ├── ICU/Emergency
+│   │   ├── ICU Admission
+│   │   ├── ICU Records
+│   │   ├── Emergency Cases
+│   │   └── Emergency Reports
+│   └── Operation Theatre
+│       ├── OT Schedule
+│       ├── Surgery Records
+│       ├── OT Reports
+│       └── Staff Assignment
+│
+├── 🔬 LABORATORY & RADIOLOGY
+│   ├── Laboratory (LIS)
+│   │   ├── Lab Tests
+│   │   ├── Test Parameters
+│   │   ├── Lab Orders
+│   │   ├── Sample Collection
+│   │   ├── Lab Reports
+│   │   └── AI Report Analysis
+│   ├── Radiology (RIS)
+│   │   ├── X-Ray
+│   │   ├── CT Scan
+│   │   ├── MRI
+│   │   ├── Ultrasound
+│   │   ├── Reports
+│   │   └── DICOM Viewer
+│   └── Blood Bank
+│       ├── Blood Inventory
+│       ├── Donor Management
+│       ├── Blood Issue
+│       └── Reports
+│
+├── 💊 PHARMACY & BILLING
+│   ├── Pharmacy
+│   │   ├── Medicines
+│   │   ├── Categories
+│   │   ├── Stock Management
+│   │   ├── Purchase Orders
+│   │   └── Inventory Reports
+│   ├── Prescriptions
+│   │   ├── E-Prescription
+│   │   ├── Prescription List
+│   │   └── Drug Interaction Alerts
+│   ├── Billing
+│   │   ├── OPD Billing
+│   │   ├── IPD Billing
+│   │   ├── Pharmacy Billing
+│   │   ├── GST Invoicing
+│   │   └── Payment Collection
+│   └── Insurance & TPA
+│       ├── Insurance Claims
+│       ├── TPA Management
+│       └── Claim Reports
+│
+│
+├── 💰 ACCOUNTING (Double-Entry)
+│   ├── Chart of Accounts
+│   │   ├── View Accounts
+│   │   └── Account Setup
+│   ├── Vouchers
+│   │   ├── Billing Vouchers
+│   │   ├── Payment Vouchers
+│   │   ├── Receipt Vouchers
+│   │   ├── Journal Entries
+│   │   └── Insurance Vouchers
+│   ├── Receivables
+│   │   ├── Patient Receivables
+│   │   ├── Insurance Receivables
+│   │   └── Collection Reports
+│   ├── Payables
+│   │   ├── Supplier Payables
+│   │   └── Payment Reports
+│   └── Financial Reports
+│       ├── Trial Balance
+│       ├── Profit & Loss
+│       ├── Balance Sheet
+│       ├── Cash Flow
+│       └── GST Summary
+│
+├── 🤖 AI FEATURES
+│   ├── AI Symptom Checker
+│   ├── AI Medical Coding (ICD-10)
+│   ├── AI Disease-Risk Prediction
+│   ├── AI Prescription Suggestions
+│   ├── AI Appointment Optimization
+│   ├── AI Follow-up Reminders
+│   ├── AI Drug-Interaction Alerts
+│   ├── AI Health-Risk Scoring
+│   ├── AI Lab-Report Analysis
+│   └── AI Clinical Decision Support
+│
+├── 📱 PATIENT PORTAL
+│   ├── Online Appointment Booking
+│   ├── Video Consultation
+│   ├── View Prescriptions
+│   ├── Download Reports
+│   ├── Digital Health Records
+│   ├── Online Payments
+│   ├── Health History
+│   ├── Family Management
+│   └── Push Notifications
+│
+├── 📈 REPORTS & ANALYTICS
+│   ├── Clinical Reports
+│   ├── Financial Reports
+│   ├── Operational Reports
+│   ├── Dashboard Analytics
+│   └── Management MIS
+│
+├── ⚙️ SYSTEM SETTINGS
+│   ├── Company Settings
+│   ├── GST Settings
+│   ├── Notification Settings
+│   └── Integration Settings
+│
+└── 🔐 USER MANAGEMENT
+    ├── Users
+    │   ├── Add/Edit/Delete
+    │   ├── Roles
+    │   └── Permissions
+    ├── Audit Logs
+    └── System Health

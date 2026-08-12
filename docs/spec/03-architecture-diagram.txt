@@ -1,0 +1,29 @@
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                              PRESENTATION LAYER                                │
+├─────────────────────┬─────────────────────┬───────────────────────────────────┤
+│  Web Admin          │  Patient Portal     │   Mobile App (Flutter)           │
+│  (Laravel/React)    │  (Laravel/React)    │   - Patient Dashboard            │
+│  - Hospital Admin   │  - Appointments     │   - Appointment Booking          │
+│  - Doctor Portal    │  - Prescriptions    │   - Lab Reports                 │
+│  - Lab Dashboard    │  - Lab Reports      │   - Teleconsultation             │
+├─────────────────────┴─────────────────────┴───────────────────────────────────┤
+│                              APPLICATION LAYER                                │
+├─────────────────────┬─────────────────────┬───────────────────────────────────┤
+│  Clinical Modules   │  Admin Modules      │   AI Layer                       │
+│  - OPD              │  - User Mgmt        │   - Symptom Checker              │
+│  - IPD              │  - Reports          │   - ICD-10 Coding               │
+│  - Nursing          │  - Configuration    │   - Disease Prediction          │
+│  - ICU/Emergency    │  - Audit Logs       │   - Drug Interaction             │
+│  - OT               │  - Multi-Branch     │   - Lab Report Analysis         │
+├─────────────────────┼─────────────────────┼───────────────────────────────────┤
+│  Diagnostic Module  │  Pharmacy Module    │   Accounting Module              │
+│  - Laboratory (LIS) │  - Medicine Stock   │   - Double-Entry Ledger         │
+│  - Radiology (RIS)  │  - E-Prescription   │   - Patient Billing             │
+│  - Blood Bank       │  - Billing          │   - Insurance & TPA             │
+│  - Sample Tracking  │  - GST Invoicing    │   - Financial Reports           │
+├─────────────────────┴─────────────────────┴───────────────────────────────────┤
+│                              DATA LAYER                                      │
+├───────────────────────────────────────────────────────────────────────────────┤
+│                    MySQL Database (Multi-Tenant)                             │
+│  - Hospital DB1    - Hospital DB2    - Hospital DB3                         │
+└───────────────────────────────────────────────────────────────────────────────┘
