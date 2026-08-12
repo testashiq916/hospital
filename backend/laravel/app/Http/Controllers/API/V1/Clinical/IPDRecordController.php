@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Clinical;
 
 use App\Http\Controllers\API\V1\CrudController;
 use App\Models\Clinical\IPDRecord;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -37,7 +38,7 @@ class IPDRecordController extends CrudController
         ];
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $data = $request->validate($this->rules($request));
         $data['ipd_date'] = now()->toDateString();

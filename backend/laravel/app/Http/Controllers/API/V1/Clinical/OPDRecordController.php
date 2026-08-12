@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Clinical;
 
 use App\Http\Controllers\API\V1\CrudController;
 use App\Models\Clinical\OPDRecord;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,7 +40,7 @@ class OPDRecordController extends CrudController
         ];
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $data = $request->validate($this->rules($request));
         $data['opd_date'] = now()->toDateString();

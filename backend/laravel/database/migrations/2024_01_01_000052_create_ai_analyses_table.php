@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('ai_analyses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies');
-            $table->foreignId('hospital_id')->constrained('hospitals');
+            $table->foreignId('hospital_id')->nullable()->constrained('hospitals')->nullOnDelete();
             $table->foreignId('patient_id')->nullable()->constrained('patients')->nullOnDelete();
             $table->string('type', 100);
             $table->string('module', 100)->nullable();

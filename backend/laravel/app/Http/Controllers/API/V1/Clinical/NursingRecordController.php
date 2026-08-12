@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Clinical;
 
 use App\Http\Controllers\API\V1\CrudController;
 use App\Models\Clinical\NursingRecord;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class NursingRecordController extends CrudController
@@ -34,7 +35,7 @@ class NursingRecordController extends CrudController
         ];
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $data = $request->validate($this->rules($request));
         $data['record_date'] = $data['record_date'] ?? now()->toDateString();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API\V1\Lab;
 
 use App\Http\Controllers\API\V1\CrudController;
 use App\Models\Lab\BloodBank;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,7 @@ class BloodBankController extends CrudController
         ];
     }
 
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $data = $request->validate($this->rules($request));
         $data['created_by'] = Auth::id();

@@ -13,7 +13,7 @@ return new class extends Migration
         Schema::create('ai_chat_histories', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')->constrained('companies');
-            $table->foreignId('hospital_id')->constrained('hospitals');
+            $table->foreignId('hospital_id')->nullable()->constrained('hospitals')->nullOnDelete();
             $table->foreignId('patient_id')->nullable()->constrained('patients')->nullOnDelete();
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->string('session_id', 100)->nullable();
