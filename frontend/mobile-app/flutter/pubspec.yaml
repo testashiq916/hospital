@@ -1,0 +1,38 @@
+name: hms_patient_app
+description: "Hospital Management SaaS — Patient mobile companion app (appointments, prescriptions, lab & radiology reports, billing/payments, health timeline)."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Networking
+  dio: ^5.4.3+1
+
+  # State management
+  provider: ^6.1.2
+
+  # Local/secure storage for the Sanctum bearer token + API base URL
+  flutter_secure_storage: ^9.2.2
+  shared_preferences: ^2.2.3
+
+  # Formatting
+  intl: ^0.19.0
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
