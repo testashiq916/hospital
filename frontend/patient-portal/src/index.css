@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  --color-brand-50: #eefdf6;
+  --color-brand-100: #d6f9e7;
+  --color-brand-200: #aef1d1;
+  --color-brand-300: #78e3b5;
+  --color-brand-400: #42cd97;
+  --color-brand-500: #1fb27d;
+  --color-brand-600: #128f66;
+  --color-brand-700: #107254;
+  --color-brand-800: #115a45;
+  --color-brand-900: #0f4a3a;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f6f8f7;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Small helper so number inputs (e.g. mobile) don't show spinners. */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
