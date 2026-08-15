@@ -53,7 +53,7 @@ class BillingService
 
     public function __construct(protected VoucherPostingService $vouchers) {}
 
-    public function createBill(array $billData, array $items, bool $settledImmediately = null): HospitalBill
+    public function createBill(array $billData, array $items, ?bool $settledImmediately = null): HospitalBill
     {
         return DB::transaction(function () use ($billData, $items, $settledImmediately) {
             $subtotal = 0;
