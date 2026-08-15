@@ -194,10 +194,10 @@ class _PatientLinkNotice extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppTheme.warning.withOpacity(0.08),
+      color: AppTheme.warning.withValues(alpha: 0.08),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
-        side: BorderSide(color: AppTheme.warning.withOpacity(0.3)),
+        side: BorderSide(color: AppTheme.warning.withValues(alpha: 0.3)),
       ),
       child: Padding(
         padding: const EdgeInsets.all(14),
@@ -323,7 +323,7 @@ class _QuickActionTile extends StatelessWidget {
               height: 40,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: AppTheme.primary.withOpacity(0.1),
+                color: AppTheme.primary.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Icon(icon, color: AppTheme.primary, size: 20),
@@ -419,7 +419,7 @@ class _AppointmentTile extends StatelessWidget {
                 height: 46,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppTheme.primary.withOpacity(0.1),
+                  color: AppTheme.primary.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(

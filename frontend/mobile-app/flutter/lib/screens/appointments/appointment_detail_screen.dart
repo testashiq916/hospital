@@ -128,7 +128,7 @@ class _AppointmentDetailScreenState extends State<AppointmentDetailScreen> {
                       appointment.cancelledReason != null) ...[
                     const SizedBox(height: 16),
                     Card(
-                      color: AppTheme.danger.withOpacity(0.06),
+                      color: AppTheme.danger.withValues(alpha: 0.06),
                       child: Padding(
                         padding: const EdgeInsets.all(14),
                         child: Column(

@@ -411,11 +411,11 @@ class _DoctorStep extends StatelessWidget {
           .map(
             (d) => Card(
               color: selected?.id == d.id
-                  ? AppTheme.primary.withOpacity(0.06)
+                  ? AppTheme.primary.withValues(alpha: 0.06)
                   : null,
               child: ListTile(
                 leading: CircleAvatar(
-                  backgroundColor: AppTheme.primary.withOpacity(0.1),
+                  backgroundColor: AppTheme.primary.withValues(alpha: 0.1),
                   child: Text(
                     d.name.isNotEmpty ? d.name[0].toUpperCase() : 'D',
                     style: const TextStyle(color: AppTheme.primary),
@@ -622,7 +622,7 @@ class _BookingConfirmedView extends StatelessWidget {
                 width: 72,
                 height: 72,
                 decoration: BoxDecoration(
-                  color: AppTheme.success.withOpacity(0.12),
+                  color: AppTheme.success.withValues(alpha: 0.12),
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(Icons.check_rounded,
@@ -644,7 +644,7 @@ class _BookingConfirmedView extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
                 decoration: BoxDecoration(
-                  color: AppTheme.primary.withOpacity(0.08),
+                  color: AppTheme.primary.withValues(alpha: 0.08),
                   borderRadius: BorderRadius.circular(16),
                 ),
                 child: Column(

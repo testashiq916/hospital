@@ -53,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 32,
-                backgroundColor: AppTheme.primary.withOpacity(0.12),
+                backgroundColor: AppTheme.primary.withValues(alpha: 0.12),
                 child: Text(
                   (user != null && user.name.isNotEmpty)
                       ? user.name[0].toUpperCase()
@@ -117,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ] else
             Card(
-              color: AppTheme.warning.withOpacity(0.08),
+              color: AppTheme.warning.withValues(alpha: 0.08),
               child: Padding(
                 padding: const EdgeInsets.all(14),
                 child: Column(

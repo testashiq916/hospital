@@ -95,7 +95,7 @@ class _LabReportsTabState extends State<LabReportsTab>
                       height: 44,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: AppTheme.success.withOpacity(0.1),
+                        color: AppTheme.success.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Icon(Icons.biotech_outlined,

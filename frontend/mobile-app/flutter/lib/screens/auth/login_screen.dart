@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 64,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: AppTheme.primary.withOpacity(0.1),
+                        color: AppTheme.primary.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(18),
                       ),
                       child: const Icon(
@@ -182,8 +182,8 @@ class _DemoCredentialsCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Icon(Icons.info_outline_rounded,
                     size: 18, color: AppTheme.accent),
                 SizedBox(width: 8),

@@ -1,3 +1,5 @@
+import '../utils/json_helpers.dart';
+
 class LabOrderItem {
   final int id;
   final String testName;
@@ -31,10 +33,11 @@ class LabOrderItem {
     return LabOrderItem(
       id: (json['id'] as num).toInt(),
       testName: test is Map ? (test['name'] ?? 'Test').toString() : 'Test',
-      result: (json['result'] as num?)?.toDouble(),
+      // result/range_low/range_high are `decimal:2` casts -> JSON strings.
+      result: asDouble(json['result']),
       resultText: json['result_text'] as String?,
-      rangeLow: (json['range_low'] as num?)?.toDouble(),
-      rangeHigh: (json['range_high'] as num?)?.toDouble(),
+      rangeLow: asDouble(json['range_low']),
+      rangeHigh: asDouble(json['range_high']),
       unit: json['unit'] as String?,
       remarks: json['remarks'] as String?,
     );

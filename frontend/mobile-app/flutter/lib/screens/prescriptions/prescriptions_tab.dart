@@ -97,7 +97,7 @@ class _PrescriptionsTabState extends State<PrescriptionsTab>
                       height: 44,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                        color: AppTheme.accent.withOpacity(0.1),
+                        color: AppTheme.accent.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Icon(Icons.medication_outlined,

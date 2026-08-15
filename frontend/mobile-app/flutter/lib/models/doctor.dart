@@ -1,3 +1,5 @@
+import '../utils/json_helpers.dart';
+
 class Doctor {
   final int id;
   final String name;
@@ -66,7 +68,8 @@ class DoctorSchedule {
       slotDuration: (json['slot_duration'] as num?)?.toInt() ?? 15,
       maxPatients: (json['max_patients'] as num?)?.toInt() ?? 20,
       isAvailable: json['is_available'] == true,
-      consultationFee: (json['consultation_fee'] as num?)?.toDouble(),
+      // consultation_fee is a `decimal:2` cast -> JSON string.
+      consultationFee: asDouble(json['consultation_fee']),
       location: json['location'] as String?,
     );
   }

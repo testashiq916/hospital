@@ -44,6 +44,7 @@ class _PayNowSheetState extends State<PayNowSheet> {
   }
 
   Future<void> _confirmPayment() async {
+    final billing = context.read<BillingProvider>();
     setState(() {
       _processing = true;
       _error = null;
@@ -51,7 +52,7 @@ class _PayNowSheetState extends State<PayNowSheet> {
     try {
       // Simulated gateway round-trip — see class doc.
       await Future.delayed(const Duration(milliseconds: 1200));
-      await context.read<BillingProvider>().pay(
+      await billing.pay(
             billId: widget.bill.id,
             amount: widget.bill.balanceAmount,
             paymentMethod: _method,
