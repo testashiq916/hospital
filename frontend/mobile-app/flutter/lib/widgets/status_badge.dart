@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+
+import '../utils/formatters.dart';
+
+/// Small colored pill used everywhere a domain status (appointment status,
+/// payment status, lab status...) needs to be shown at a glance.
+class StatusBadge extends StatelessWidget {
+  const StatusBadge({super.key, required this.label, required this.color});
+
+  final String label;
+  final Color color;
+
+  factory StatusBadge.fromStatus(String status, Color color) {
+    return StatusBadge(label: Formatters.titleCase(status), color: color);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.12),
+        borderRadius: BorderRadius.circular(999),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          color: color,
+          fontSize: 12,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+    );
+  }
+}
